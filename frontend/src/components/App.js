@@ -1,11 +1,15 @@
-
+import React from 'react';
+import { Grid } from '@mui/material'
 import '../styles/App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <div>Hello World</div>
-    </div>
+    <Grid container>
+      <Grid item xs={8}>
+        Hello World
+      </Grid>
+    </Grid>
   );
 }
 
