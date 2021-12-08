@@ -4,6 +4,7 @@ import { Grid } from '@mui/material'
 import '../styles/App.css';
 import { Route, Routes } from 'react-router';
 import Landing from './Landing'
+import PhotoList from './PhotoList';
 // TODO: Add Router *Check*
 // TODO: Landing Page *Started*
 // TODO: Product Page
@@ -24,6 +25,7 @@ function App() {
       <Grid item xs={12}>
         <Routes>
           <Route path = '/' exact element = {<Landing />} />
+          <Route path = '/photos' elemeent = {<PhotoList />} />
         </Routes>
       </Grid>
     </Grid>
