@@ -8,7 +8,7 @@ import PhotoList from './PhotoList';
 // TODO: Add Router *Check*
 // TODO: Landing Page *Started*
 // TODO: Product Page
-// TODO: Product List
+// TODO: Product List *Started
 // TODO: Cart
 // TODO: Profile Page
 // TODO: Payment

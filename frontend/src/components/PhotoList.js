@@ -1,11 +1,13 @@
-import { Grid } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 
 
 export default function PhotoList () {
     return (
         <Grid>
-            This is the photo list.
+            <Typography>
+                This is the photo list.
+            </Typography>
         </Grid>
     )
 }
