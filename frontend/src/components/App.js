@@ -2,8 +2,10 @@ import React from 'react';
 import Navbar from './Navbar';
 import { Grid } from '@mui/material'
 import '../styles/App.css';
-// TODO: Add Router
-// TODO: Landing Page
+import { Route, Routes } from 'react-router';
+import Landing from './Landing'
+// TODO: Add Router *Check*
+// TODO: Landing Page *Started*
 // TODO: Product Page
 // TODO: Product List
 // TODO: Cart
@@ -20,7 +22,9 @@ function App() {
         <Navbar />
       </Grid>
       <Grid item xs={12}>
-        Hello World
+        <Routes>
+          <Route path = '/' exact element = {<Landing />} />
+        </Routes>
       </Grid>
     </Grid>
   );
