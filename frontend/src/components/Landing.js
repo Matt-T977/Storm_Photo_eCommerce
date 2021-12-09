@@ -1,4 +1,5 @@
-import { Card, Grid, Paper, Typography } from '@mui/material'
+import { Card, CardContent, CardMedia, Grid, Paper, Typography } from '@mui/material'
+import { maxWidth } from '@mui/system'
 import React, { useState, useEffect } from 'react'
 import LandingImage from '../img/LandingImage.jpg'
 
@@ -21,18 +22,25 @@ export default function Landing () {
             </Grid>
             <Grid md={10} xs={12}>
                 <Paper elevation={3}>
-                    <Typography padding={3}>
+                    <Typography variant='h4' padding={3}>
                         Blog Section
-                        <Card>
-                            Random 1
-                        </Card>
-                        <Card>
-                            Random 2
-                        </Card>
-                        <Card>
-                            Random 3
-                        </Card>
                     </Typography>
+                        <Card sx={{maxWidth: 375}}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image={LandingImage}
+                                alt="example"
+                            />
+                            <CardContent>
+                                <Typography variant='h5' component='h5'>
+                                    Random Title
+                                </Typography>
+                                <Typography>
+                                    Here is some example text for this blog post.
+                                </Typography>
+                            </CardContent>
+                        </Card>
                 </Paper>
             </Grid>
         </Grid>
