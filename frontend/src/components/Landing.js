@@ -11,9 +11,11 @@ export default function Landing () {
             </Grid>
             <Grid md={10} xs={12} marginBottom={3}>
                 <Paper elevation={3}>
-                    <Typography padding={3}>
-                        About Section
-                        This the landing page of Shear Beauty
+                    <Typography variant='h5' paddingLeft={3} paddingTop={3}>
+                        About This Site
+                    </Typography>
+                    <Typography variant='subtitle1' padding={3}>
+                        This the landing page of Shear Beauty, a site for my storm photography to share with the rest of you! 
                     </Typography>
                 </Paper>
             </Grid>
