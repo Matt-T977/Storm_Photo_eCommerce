@@ -7,10 +7,10 @@ import LandingImage from '../img/LandingImage.jpg'
 export default function Landing () {
     return (
         <Grid container justifyContent='center'>
-            <Grid xs={12} align='center' marginBottom={3} >
+            {/* <Grid xs={12} align='center' marginBottom={3} >
                 <img src={LandingImage} alt='Storm Header'/>
-            </Grid>
-            <Grid md={10} xs={12} marginBottom={3}>
+            </Grid> */}
+            <Grid md={10} xs={12} margin={3}>
                 <Paper elevation={3}>
                     <Typography variant='h5' paddingLeft={3} paddingTop={3}>
                         About This Site
