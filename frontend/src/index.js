@@ -12,7 +12,7 @@ const theme = createTheme({
       main: '#152D35',
     },
     secondary: {
-      main: teal,
+      main: teal['A400'],
     },
     background: {
       default: '#345B63',
