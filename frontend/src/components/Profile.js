@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Paper, TextField, Typography } from '@mui/material';
+import { Grid, Paper, TextField, Typography, Box } from '@mui/material';
 
 
 export default function Profile () {
@@ -17,7 +17,15 @@ export default function Profile () {
                         <div>
                             <TextField
                                 required
-                                
+                                id='outlined-required'
+                                label='First Name'
+                                defaultValue='First Name'
+                            />
+                            <TextField
+                                required
+                                id='outlined-required'
+                                label='Last Name'
+                                defaultValue='Last Name'
                             />
                         </div>
                     </Box>

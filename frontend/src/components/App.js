@@ -5,6 +5,7 @@ import '../styles/App.css';
 import { Route, Routes } from 'react-router';
 import Landing from './Landing'
 import PhotoList from './PhotoList';
+import Profile from './Profile';
 // TODO: Add Router *Check*
 // TODO: Landing Page *Started*
 // TODO: Product Page
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path = '/' exact element = {<Landing />} />
           <Route path = '/photos' elemeent = {<PhotoList />} />
+          <Route path = '/profile' element = {<Profile />} />
         </Routes>
       </Grid>
     </Grid>
