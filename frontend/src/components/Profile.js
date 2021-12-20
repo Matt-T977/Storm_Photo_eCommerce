@@ -1,9 +1,21 @@
-import * as React from 'react';
-import { Grid, Paper, TextField, Typography, Box, FormControl } from '@mui/material';
-import { width } from '@mui/system';
+import React, { useState, useEffect } from 'react'
+import { Grid, Paper, TextField, Box, FormControl } from '@mui/material';
 
 
 export default function Profile () {
+    const [userProfile, setUserProfile] = useState({
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        streetAddress: '',
+        city: '',
+        state: '',
+        zipCode: '',
+    })
+
+    const handleSubmit = {
+        
+    }
     return (
         <Grid container justifyContent='center'>
             <Grid md={10} xs={12} margin={3}>
