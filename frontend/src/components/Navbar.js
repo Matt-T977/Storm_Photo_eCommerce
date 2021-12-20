@@ -11,6 +11,7 @@ import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 // Icons  ////////////////////////////////////////
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -125,6 +126,19 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {/* Cart */}
+      <MenuItem>
+        <IconButton 
+            size="large" 
+            aria-label="Shopping Cart" 
+            color="inherit"
+        >
+          <Badge badgeContent={4} color="error">
+            <ShoppingCartIcon />
+          </Badge>
+        </IconButton>
+        <p>Shopping Cart</p>
+      </MenuItem>
       {/* Messages */}
       <MenuItem>
         <IconButton 
@@ -199,6 +213,11 @@ export default function Navbar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <IconButton size="large" aria-label="shopping cart" color="inherit">
+              <Badge badgeContent={3} color="error">
+                <ShoppingCartIcon/>
+              </Badge>
+            </IconButton>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
                 <MailIcon />
