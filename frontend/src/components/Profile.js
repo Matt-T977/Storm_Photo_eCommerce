@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Grid, Paper, TextField, Typography, Box } from '@mui/material';
+import { Grid, Paper, TextField, Typography, Box, FormControl } from '@mui/material';
+import { width } from '@mui/system';
 
 
 export default function Profile () {
@@ -19,35 +20,39 @@ export default function Profile () {
                                 required
                                 id='outlined-required'
                                 label='First Name'
-                                defaultValue='First Name...'
+                                // defaultValue='First Name...'
                             />
                             <TextField
                                 required
                                 id='outlined-required'
                                 label='Last Name'
-                                defaultValue='Last Name...'
+                                // defaultValue='Last Name...'
                             />
                         </div>
                         <div>
-                            <TextField
-                                required
-                                id='outlined-required'
-                                label='Address'
-                                defaultValue='Street Address...' 
-                            />
+                            <FormControl
+                                fullWidth
+                            >
+                                <TextField
+                                    required
+                                    id='outlined-required'
+                                    label='Address'
+                                    // defaultValue='Street Address...' 
+                                />
+                            </FormControl>
                         </div>
                         <div>
                             <TextField
                                 required
                                 id='outlined-required'
                                 label='City'
-                                defaultValue='City...'
+                                // defaultValue='City...'
                             />
                             <TextField
                                 required
                                 id='outlined-required'
                                 label='State'
-                                defaultValue='State...'
+                                // defaultValue='State...'
                             />
                         </div>
                     </Box>
