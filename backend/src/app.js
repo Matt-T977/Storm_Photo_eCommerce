@@ -1,10 +1,13 @@
 import createError from 'http-errors';
 import express from 'express';
+import cors from 'cors';
 import path from 'path';
 import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
 import logger from 'morgan';
 import { initializeApp, applicationDefault, cert } from 'firebase-admin';
 import { getFirestore, Timestamp, FieldValue } from 'firebase-admin/firestore';
+import config from './config';
 
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
@@ -23,6 +26,7 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
