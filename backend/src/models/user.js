@@ -1,7 +1,6 @@
 class User {
-    constructor(id, firstName, lastName, streetAddress, city, state, zipCode,
+    constructor(firstName, lastName, streetAddress, city, state, zipCode,
         phoneNumber, orders) {
-            this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.streetAddress = streetAddress;
