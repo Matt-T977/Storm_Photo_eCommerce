@@ -5,9 +5,9 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
-import { initializeApp, applicationDefault, cert } from 'firebase-admin';
-import { getFirestore, Timestamp, FieldValue } from 'firebase-admin/firestore';
-import config from './config';
+// import { initializeApp, applicationDefault, cert } from 'firebase-admin';
+// import { getFirestore, Timestamp, FieldValue } from 'firebase-admin/firestore';
+import config from '../config';
 
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
@@ -17,8 +17,8 @@ import notificationsRouter from './routes/notifications';
 const app = express();
 
 // Firebase Initialize
-initializeApp();
-const db = getFirestore();
+// initializeApp();
+// const db = getFirestore();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +29,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Router
