@@ -43,5 +43,6 @@ const getAllUsers = async (req, res, next) => {
 };
 
 export default {
-    addUser
+    addUser,
+    getAllUsers,
 }

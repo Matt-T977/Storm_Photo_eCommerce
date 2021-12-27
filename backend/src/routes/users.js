@@ -4,9 +4,7 @@ import userController from '../controllers/userController';
 const router = express.Router();
 
 /*Primary*/
-router.get('/', (req, res) => {
-  res.send('respond with a resource');
-});
+router.get('/', userController.getAllUsers);
 
 router.post('/', userController.addUser);
 
