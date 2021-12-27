@@ -2,7 +2,7 @@ import { firestore } from "firebase-admin";
 import db from "../db";
 import User from '../models/user';
 
-
+// Post Request
 const addUser = async (req, res, next) => {
     try {
         const data = req.body;
@@ -13,6 +13,7 @@ const addUser = async (req, res, next) => {
     } next
 };
 
+// Get All Users Request
 const getAllUsers = async (req, res, next) => {
     try {
         const users = await db.collection('users');
@@ -42,7 +43,23 @@ const getAllUsers = async (req, res, next) => {
     } next
 };
 
+const getUser = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const user = await db.collection('users').doc(id);
+        const data = await user.get();
+        if (!data.exists) {
+            res.status(404).send("This user does not exist.");
+        } else {
+            res.send(data.data());
+        }
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
+
 export default {
     addUser,
     getAllUsers,
+    getUser,
 }
