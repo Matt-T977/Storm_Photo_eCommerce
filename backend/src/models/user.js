@@ -11,3 +11,5 @@ class User {
             this.orders = orders;
         }
 }
+
+export default User;
