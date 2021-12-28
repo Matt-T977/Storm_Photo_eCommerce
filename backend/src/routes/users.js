@@ -8,10 +8,8 @@ router.get('/list', userController.getAllUsers);
 
 router.get('/:id', userController.getUser);
 
-router.post('/', userController.addUser);
+router.post('/new', userController.addUser);
 
-router.put('/', (req, res) => {
-  res.send('Update User');
-});
+router.put('/:id', userController.updateUser);
 
 export default router;
