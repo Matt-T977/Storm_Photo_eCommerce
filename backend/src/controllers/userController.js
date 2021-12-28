@@ -74,9 +74,21 @@ const updateUser = async (req, res, next) => {
   next;
 }
 
+const deleteUser = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    await db.collection('users').doc(id).delete();
+    res.send('User has been deleted successfully')
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next; 
+}
+
 export default {
   addUser,
   getAllUsers,
   getUser,
   updateUser,
+  deleteUser,
 };
