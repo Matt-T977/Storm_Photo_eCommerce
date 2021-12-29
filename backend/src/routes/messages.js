@@ -7,4 +7,6 @@ router.get('/list', messageController.getAllMessages);
 
 router.get('/:userId/:messageId', messageController.getMessage);
 
+router.post('/new', messageController.addMessage);
+
 export default router;
