@@ -13,3 +13,32 @@ const addProduct = async (req, res, next) => {
   }
   next;
 };
+
+// Get All Products
+const getAllProducts = async (req, res, next) => {
+  try {
+    const products = await db.collection('products');
+    const data = await products.get();
+    const productsArray = [];
+    if (data.empty) {
+      res.status(404).send('No Products Found');
+    } else {
+      data.forEach((doc) => {
+        const product = new Product(
+          doc.id,
+          doc.data().imageURI,
+          doc.data().name,
+          doc.data().type,
+          doc.data().resolution,
+          doc.data().description,
+          doc.data().price,
+        );
+        productsArray.push(product);
+      });
+      res.send(productsArray);
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
