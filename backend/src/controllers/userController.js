@@ -7,7 +7,7 @@ const addUser = async (req, res, next) => {
   try {
     const data = req.body;
     const docRef = await db.collection('users').add(data);
-    res.status(200).send('User successfully created with profile: ' + docRef);
+    res.status(200).send(`User successfully created with profile: ${docRef}`);
   } catch (error) {
     res.status(400).send(error.message);
   }
@@ -47,7 +47,7 @@ const getAllUsers = async (req, res, next) => {
 
 const getUser = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const { id } = req.params;
     const user = await db.collection('users').doc(id);
     const data = await user.get();
     if (!data.exists) {
@@ -63,7 +63,7 @@ const getUser = async (req, res, next) => {
 
 const updateUser = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const { id } = req.params;
     const data = req.body;
     const user = await db.collection('users').doc(id);
     await user.update(data);
@@ -72,18 +72,18 @@ const updateUser = async (req, res, next) => {
     res.status(400).send(error.message);
   }
   next;
-}
+};
 
 const deleteUser = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const { id } = req.params;
     await db.collection('users').doc(id).delete();
-    res.send('User has been deleted successfully')
+    res.send('User has been deleted successfully');
   } catch (error) {
     res.status(400).send(error.message);
   }
-  next; 
-}
+  next;
+};
 
 export default {
   addUser,
