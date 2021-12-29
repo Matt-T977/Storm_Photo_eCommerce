@@ -1,4 +1,5 @@
 import { firestore } from 'firebase-admin';
+import products from '../../dist/routes/products';
 import db from '../db';
 import Product from '../models/product';
 
@@ -41,4 +42,26 @@ const getAllProducts = async (req, res, next) => {
     res.status(400).send(error.message);
   }
   next;
+};
+
+const getProduct = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const product = db.collection('products').doc(id);
+    const data = await product.get();
+    if (!data.exists) {
+      res.status(404).send('No product Found');
+    } else {
+      res.send(data.data());
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
+
+export default {
+  addProduct,
+  getAllProducts,
+  getProduct,
 };
