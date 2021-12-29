@@ -80,3 +80,10 @@ const deleteMessage = async (req, res, next) => {
   }
   next;
 };
+
+export default {
+  addMessage,
+  getAllMessages,
+  getMessage,
+  deleteMessage,
+};
