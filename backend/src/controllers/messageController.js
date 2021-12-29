@@ -44,3 +44,39 @@ const getAllMessages = async (req, res, next) => {
   }
   next;
 };
+
+const getMessage = async (req, res, next) => {
+  try {
+    const { userId, messageId } = req.params;
+    const message = await db
+      .collection('users')
+      .doc(userId)
+      .collection('messages')
+      .doc(messageId);
+    const data = await message.get();
+    if (!data.exists) {
+      res.status(404).send('No Message found.');
+    } else {
+      res.send(data.data());
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
+
+const deleteMessage = async (req, res, next) => {
+  try {
+    const { userId, messageId } = req.params;
+    await db
+      .collection('users')
+      .doc(userId)
+      .collection('messages')
+      .doc(messageId)
+      .delete();
+    res.send('Message successfully deleted.');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
