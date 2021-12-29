@@ -9,4 +9,6 @@ router.get('/:userId/:messageId', messageController.getMessage);
 
 router.post('/new', messageController.addMessage);
 
+router.delete('/:userId/:messageId', messageController.deleteMessage);
+
 export default router;
