@@ -11,7 +11,6 @@ import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 import productsRouter from './routes/products';
 import messagesRouter from './routes/messages';
-import notificationsRouter from './routes/notifications';
 
 const app = express();
 
@@ -32,7 +31,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/messages', messagesRouter);
-app.use('/notifications', notificationsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
