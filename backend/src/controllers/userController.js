@@ -1,4 +1,4 @@
-import { firestore } from 'firebase-admin';
+// import { firestore } from 'firebase-admin';
 import db from '../db';
 import User from '../models/user';
 
