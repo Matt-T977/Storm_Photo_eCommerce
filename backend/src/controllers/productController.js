@@ -1,5 +1,4 @@
 import { firestore } from 'firebase-admin';
-import products from '../../dist/routes/products';
 import db from '../db';
 import Product from '../models/product';
 
@@ -61,20 +60,33 @@ const getProduct = async (req, res, next) => {
 };
 
 const updateProduct = async (req, res, next) => {
-    try {
-        const { id } = req.params;
-        const data = req.body;
-        const product = await db.collection('products').doc(id);
-        await product.update(data);
-        res.send('Product profile updated.')
-    } catch (error) {
-        res.status(400).send(error.message));
-    }
-    next;
-}
+  try {
+    const { id } = req.params;
+    const data = req.body;
+    const product = await db.collection('products').doc(id);
+    await product.update(data);
+    res.send('Product profile updated.');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
+
+const deleteProduct = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    await db.collection('users').doc(id).delete();
+    res.send('Product has been deleted successfully');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
 
 export default {
   addProduct,
   getAllProducts,
   getProduct,
+  updateProduct,
+  deleteProduct,
 };
