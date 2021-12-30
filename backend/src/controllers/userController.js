@@ -28,6 +28,7 @@ const getAllUsers = async (req, res, next) => {
           doc.id,
           doc.data().firstName,
           doc.data().lastName,
+          doc.data().email,
           doc.data().streetAddress,
           doc.data().city,
           doc.data().state,

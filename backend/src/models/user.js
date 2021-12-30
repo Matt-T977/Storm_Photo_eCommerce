@@ -3,6 +3,7 @@ class User {
     id,
     firstName,
     lastName,
+    email,
     streetAddress,
     city,
     state,
@@ -13,6 +14,7 @@ class User {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.email = email;
     this.streetAddress = streetAddress;
     this.city = city;
     this.state = state;
