@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import App from "./components/App";
 import { lightBlue, green } from "@mui/material/colors";
 
@@ -19,11 +19,13 @@ const theme = createTheme({
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <Router>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Router>
+    <CssBaseline>
+      <Router>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Router>
+    </CssBaseline>
   </ThemeProvider>,
 
   document.getElementById("root")
