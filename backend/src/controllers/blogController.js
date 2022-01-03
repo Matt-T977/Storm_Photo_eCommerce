@@ -64,7 +64,7 @@ const getBlogPost = async (req, res, next) => {
   next;
 };
 
-const updatedBlogPost = async (req, res, next) => {
+const updateBlogPost = async (req, res, next) => {
   try {
     const { userId, blogId } = req.params;
     const data = req.body;
@@ -95,4 +95,12 @@ const deleteBlogPost = async (req, res, next) => {
     res.status(400).send(error.message);
   }
   next;
+};
+
+export default {
+  addBlog,
+  getAllBlogPosts,
+  getBlogPost,
+  updateBlogPost,
+  deleteBlogPost,
 };
