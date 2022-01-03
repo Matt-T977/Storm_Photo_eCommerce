@@ -63,3 +63,19 @@ const getBlogPost = async (req, res, next) => {
   }
   next;
 };
+
+const deleteBlogPost = async (req, res, next) => {
+  try {
+    const { userId, blogId } = req.params;
+    await db
+      .collection('users')
+      .doc(userId)
+      .collection('blog')
+      .doc(blogId)
+      .delete();
+    res.send('Blog Post Succesfully deleted.');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
