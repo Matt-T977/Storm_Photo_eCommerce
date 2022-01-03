@@ -43,3 +43,23 @@ const getAllBlogPosts = async (req, res, next) => {
   }
   next;
 };
+
+const getBlogPost = async (req, res, next) => {
+  try {
+    const { userId, blogId } = req.params;
+    const blog = await db
+      .collection('users')
+      .doc(userId)
+      .collection('blog')
+      .doc(blogId);
+    const data = await blog.get();
+    if (!data.exists) {
+      res.status(404).send('No Blog Post found.');
+    } else {
+      res.send(data.data());
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
