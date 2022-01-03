@@ -64,6 +64,23 @@ const getBlogPost = async (req, res, next) => {
   next;
 };
 
+const updatedBlogPost = async (req, res, next) => {
+  try {
+    const { userId, blogId } = req.params;
+    const data = req.body;
+    const blogPost = await db
+      .collection('users')
+      .doc(userId)
+      .collection('blog')
+      .doc(blogId);
+    await blogPost.update(data);
+    res.send('Blog Successfully Updated');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+  next;
+};
+
 const deleteBlogPost = async (req, res, next) => {
   try {
     const { userId, blogId } = req.params;
