@@ -17,20 +17,28 @@ export default function Landing() {
                 <img src={LandingImage} alt='Storm Header'/>
             </Grid> */}
       <Grid md={10} xs={12} margin={1}>
-        <Paper elevation={3}>
-          <Typography
-            variant="h4"
-            component="h1"
-            paddingLeft={3}
-            paddingTop={3}
-          >
-            About This Site
-          </Typography>
-          <Typography variant="subtitle1" padding={3}>
-            This is the landing page of Shear Beauty, a site for my storm
-            photography to share with the rest of you!
-          </Typography>
-        </Paper>
+        <Card elevation={3}>
+          <CardMedia
+            component="img"
+            height="720"
+            image={LandingImage}
+            alt="example"
+          />
+          <CardContent>
+            <Typography
+              variant="h4"
+              component="h1"
+              paddingLeft={3}
+              paddingTop={3}
+            >
+              About This Site
+            </Typography>
+            <Typography variant="subtitle1" padding={3}>
+              This is the landing page of Shear Beauty, a site for my storm
+              photography to share with the rest of you!
+            </Typography>
+          </CardContent>
+        </Card>
       </Grid>
       <Grid md={10} xs={12} margin={1}>
         <Paper elevation={3}>
