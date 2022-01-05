@@ -57,7 +57,11 @@ export default function EditProfile() {
               <TextField
                 required
                 id="outlined-required"
+                name="streetAddress"
                 label="Address"
+                type="text"
+                value={userProfile.streetAddress}
+                onChange={handleChange}
                 // defaultValue='Street Address...'
               />
             </FormControl>
