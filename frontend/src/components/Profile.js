@@ -1,18 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
+import EditProfile from "./EditProfile";
 
 export default function Profile() {
-  const [userProfile, setUserProfile] = useState({
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    streetAddress: "",
-    city: "",
-    state: "",
-    zipCode: "",
-  });
-
-  const handleSubmit = {};
   return (
     <Grid container justifyContent="center">
       <Grid md={10} xs={12} margin={3}>
@@ -27,6 +17,7 @@ export default function Profile() {
           <Typography variant="h5" align="center" padding={1}>
             Example of a profile
           </Typography>
+          <EditProfile />
         </Paper>
       </Grid>
     </Grid>
