@@ -80,7 +80,10 @@ export default function EditProfile() {
             <TextField
               required
               id="outlined-required"
+              name="state"
               label="State"
+              type="text"
+              value={userProfile.state}
               // defaultValue='State...'
             />
           </div>
