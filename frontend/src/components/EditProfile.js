@@ -70,7 +70,11 @@ export default function EditProfile() {
             <TextField
               required
               id="outlined-required"
+              name="city"
               label="City"
+              type="text"
+              value={userProfile.city}
+              onChange={handleChange}
               // defaultValue='City...'
             />
             <TextField
