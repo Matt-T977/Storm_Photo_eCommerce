@@ -5,7 +5,7 @@ import EditProfile from "./EditProfile";
 export default function Profile() {
   return (
     <Grid container justifyContent="center">
-      <Grid md={10} xs={12} margin={3}>
+      <Grid item md={10} xs={12} margin={3}>
         <Paper>
           <Typography variant="h3" align="center" padding={1}>
             Welcome UserName

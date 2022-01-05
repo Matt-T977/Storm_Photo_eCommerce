@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Grid, Paper, TextField, Box, FormControl } from "@mui/material";
+import React, { useState } from "react";
+import { Grid, TextField, Box, FormControl, Button } from "@mui/material";
 
 export default function EditProfile() {
   const [userProfile, setUserProfile] = useState({
@@ -19,16 +19,21 @@ export default function EditProfile() {
       [event.target.name]: event.target.value,
     }));
   };
-  const handleSubmit = {};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log({ userProfile });
+  };
   return (
+    // <form onSubmit={handleSubmit}>
     <Grid container justifyContent="center">
-      <Grid md={10} xs={12} margin={3}>
+      <Grid item md={10} xs={12} margin={3}>
         <Box
           component="form"
           sx={{
             "& .MuiTextField-root": { m: 1, width: "25ch" },
           }}
           autoComplete="off"
+          onSubmit={handleSubmit}
         >
           <div>
             <TextField
@@ -84,11 +89,16 @@ export default function EditProfile() {
               label="State"
               type="text"
               value={userProfile.state}
+              onChange={handleChange}
               // defaultValue='State...'
             />
           </div>
+          <Button variant="contained" color="secondary" type="submit">
+            Submit
+          </Button>
         </Box>
       </Grid>
     </Grid>
+    // </form>
   );
 }
