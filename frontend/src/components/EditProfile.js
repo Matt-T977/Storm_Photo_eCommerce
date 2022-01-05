@@ -12,7 +12,13 @@ export default function EditProfile() {
     zipCode: "",
   });
 
-  const handleChange = {};
+  const handleChange = (event) => {
+    event.persist();
+    setUserProfile((prevstate) => ({
+      ...prevstate,
+      [event.target.name]: event.target.value,
+    }));
+  };
   const handleSubmit = {};
   return (
     <Grid container justifyContent="center">
@@ -28,6 +34,7 @@ export default function EditProfile() {
             <TextField
               required
               id="outlined-required"
+              name="firstName"
               label="First Name"
               type="text"
               value={userProfile.firstName}
@@ -37,7 +44,11 @@ export default function EditProfile() {
             <TextField
               required
               id="outlined-required"
+              name="lastName"
               label="Last Name"
+              type="text"
+              value={userProfile.lastName}
+              onChange={handleChange}
               // defaultValue='Last Name...'
             />
           </div>
