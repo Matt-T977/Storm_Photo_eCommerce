@@ -12,6 +12,7 @@ export default function EditProfile() {
     zipCode: "",
   });
 
+  const handleChange = {};
   const handleSubmit = {};
   return (
     <Grid container justifyContent="center">
@@ -28,6 +29,9 @@ export default function EditProfile() {
               required
               id="outlined-required"
               label="First Name"
+              type="text"
+              value={userProfile.firstName}
+              onChange={handleChange}
               // defaultValue='First Name...'
             />
             <TextField
