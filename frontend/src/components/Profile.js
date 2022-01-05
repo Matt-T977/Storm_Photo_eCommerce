@@ -22,6 +22,13 @@ export default function Profile() {
           </Typography>
         </Paper>
       </Grid>
+      <Grid item md={10} xs={12} margin={3}>
+        <Paper>
+          <Typography variant="h5" align="center" padding={1}>
+            Example of a profile
+          </Typography>
+        </Paper>
+      </Grid>
     </Grid>
   );
 }
