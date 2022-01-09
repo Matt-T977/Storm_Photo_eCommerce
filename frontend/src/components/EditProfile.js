@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Grid, TextField, Box, FormControl, Button } from "@mui/material";
+import {
+  Grid,
+  TextField,
+  Box,
+  FormControl,
+  Button,
+  ButtonGroup,
+} from "@mui/material";
 
 export default function EditProfile() {
   const [userProfile, setUserProfile] = useState({
@@ -30,7 +37,7 @@ export default function EditProfile() {
         <Box
           component="form"
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "25ch" },
+            "& .MuiTextField-root": { m: 1, width: "30ch" },
           }}
           autoComplete="off"
           onSubmit={handleSubmit}
@@ -42,6 +49,7 @@ export default function EditProfile() {
               name="firstName"
               label="First Name"
               type="text"
+              color="primary"
               value={userProfile.firstName}
               onChange={handleChange}
               // defaultValue='First Name...'
@@ -52,6 +60,7 @@ export default function EditProfile() {
               name="lastName"
               label="Last Name"
               type="text"
+              color="secondary"
               value={userProfile.lastName}
               onChange={handleChange}
               // defaultValue='Last Name...'
@@ -65,6 +74,7 @@ export default function EditProfile() {
                 name="streetAddress"
                 label="Address"
                 type="text"
+                color="primary"
                 value={userProfile.streetAddress}
                 onChange={handleChange}
                 // defaultValue='Street Address...'
@@ -78,6 +88,7 @@ export default function EditProfile() {
               name="city"
               label="City"
               type="text"
+              color="primary"
               value={userProfile.city}
               onChange={handleChange}
               // defaultValue='City...'
@@ -88,14 +99,20 @@ export default function EditProfile() {
               name="state"
               label="State"
               type="text"
+              color="secondary"
               value={userProfile.state}
               onChange={handleChange}
               // defaultValue='State...'
             />
           </div>
-          <Button variant="contained" color="secondary" type="submit">
-            Submit
-          </Button>
+          <ButtonGroup>
+            <Button variant="contained" color="secondary" type="submit">
+              Submit
+            </Button>
+            <Button variant="contained" color="primary" type="submit">
+              Reset
+            </Button>
+          </ButtonGroup>
         </Box>
       </Grid>
     </Grid>
