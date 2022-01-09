@@ -31,81 +31,98 @@ export default function EditProfile() {
     console.log({ userProfile });
   };
   return (
-    // <form onSubmit={handleSubmit}>
     <Grid container justifyContent="center">
-      <Grid item md={10} xs={12} margin={3}>
-        <Box
-          component="form"
+      {/* <Grid container item md={10} xs={12} margin={3} justifyContent="center"> */}
+      <Box
+        component="form"
+        md={10}
+        xs={12}
+        margin={3}
+        autoComplete="off"
+        justifyContent="center"
+        onSubmit={handleSubmit}
+      >
+        <Grid
+          item
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "30ch" },
+            "& .MuiTextField-root": { m: 1, width: "25vw" },
           }}
-          autoComplete="off"
-          onSubmit={handleSubmit}
+          textAlign="center"
         >
-          <div>
-            <TextField
-              required
-              id="outlined-required"
-              name="firstName"
-              label="First Name"
-              type="text"
-              color="primary"
-              value={userProfile.firstName}
-              onChange={handleChange}
-              // defaultValue='First Name...'
-            />
-            <TextField
-              required
-              id="outlined-required"
-              name="lastName"
-              label="Last Name"
-              type="text"
-              color="secondary"
-              value={userProfile.lastName}
-              onChange={handleChange}
-              // defaultValue='Last Name...'
-            />
-          </div>
-          <div>
-            <FormControl fullWidth>
-              <TextField
-                required
-                id="outlined-required"
-                name="streetAddress"
-                label="Address"
-                type="text"
-                color="primary"
-                value={userProfile.streetAddress}
-                onChange={handleChange}
-                // defaultValue='Street Address...'
-              />
-            </FormControl>
-          </div>
-          <div>
-            <TextField
-              required
-              id="outlined-required"
-              name="city"
-              label="City"
-              type="text"
-              color="primary"
-              value={userProfile.city}
-              onChange={handleChange}
-              // defaultValue='City...'
-            />
-            <TextField
-              required
-              id="outlined-required"
-              name="state"
-              label="State"
-              type="text"
-              color="secondary"
-              value={userProfile.state}
-              onChange={handleChange}
-              // defaultValue='State...'
-            />
-          </div>
-          <ButtonGroup>
+          <TextField
+            required
+            id="outlined-required"
+            name="firstName"
+            label="First Name"
+            type="text"
+            color="primary"
+            value={userProfile.firstName}
+            onChange={handleChange}
+            placeholder="Jane"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            name="lastName"
+            label="Last Name"
+            type="text"
+            color="secondary"
+            value={userProfile.lastName}
+            onChange={handleChange}
+            placeholder="Smith"
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "51vw" },
+          }}
+          textAlign="center"
+        >
+          <TextField
+            required
+            id="outlined-required"
+            name="streetAddress"
+            label="Address"
+            type="text"
+            color="primary"
+            value={userProfile.streetAddress}
+            onChange={handleChange}
+            placeholder="123 Main St"
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "25vw" },
+          }}
+          textAlign="center"
+        >
+          <TextField
+            required
+            id="outlined-required"
+            name="city"
+            label="City"
+            type="text"
+            color="primary"
+            value={userProfile.city}
+            onChange={handleChange}
+            placeholder="Moore"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            name="state"
+            label="State"
+            type="text"
+            color="secondary"
+            value={userProfile.state}
+            onChange={handleChange}
+            placeholder="OK"
+          />
+        </Grid>
+        <Grid item textAlign="center">
+          <ButtonGroup size="large">
             <Button variant="contained" color="secondary" type="submit">
               Submit
             </Button>
@@ -113,9 +130,9 @@ export default function EditProfile() {
               Reset
             </Button>
           </ButtonGroup>
-        </Box>
-      </Grid>
+        </Grid>
+      </Box>
+      {/* </Grid> */}
     </Grid>
-    // </form>
   );
 }
