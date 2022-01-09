@@ -31,21 +31,19 @@ export default function EditProfile() {
     console.log({ userProfile });
   };
   return (
-    <Grid container justifyContent="center">
+    <Grid container md={10} xs={12} marginX="auto">
       {/* <Grid container item md={10} xs={12} margin={3} justifyContent="center"> */}
       <Box
+        item
         component="form"
-        md={10}
-        xs={12}
         margin={3}
         autoComplete="off"
-        justifyContent="center"
         onSubmit={handleSubmit}
       >
         <Grid
           item
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "25vw" },
+            "& .MuiTextField-root": { m: 1, width: "30vw" },
           }}
           textAlign="center"
         >
@@ -75,7 +73,7 @@ export default function EditProfile() {
         <Grid
           item
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "51vw" },
+            "& .MuiTextField-root": { m: 1, width: "64vw" },
           }}
           textAlign="center"
         >
@@ -94,7 +92,7 @@ export default function EditProfile() {
         <Grid
           item
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "25vw" },
+            "& .MuiTextField-root": { m: 1, width: "30vw" },
           }}
           textAlign="center"
         >
