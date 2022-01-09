@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router";
 import Landing from "./Landing";
 import PhotoList from "./PhotoList";
 import Profile from "./Profile";
+import axios from "axios";
 // TODO: Add Router *Check*
 // TODO: Landing Page *Started*
 // TODO: Product Page

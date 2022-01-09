@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Grid, TextField, Box, Button, ButtonGroup } from "@mui/material";
 
 export default function EditProfile() {
@@ -23,6 +24,17 @@ export default function EditProfile() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({ userProfile });
+  };
+  const editUser = async (userId) => {
+    const path = "http://localhost:8080/users/" + userId + "/";
+    await axios
+      .put(path, userProfile)
+      .then((res) => {
+        console.log("Get current User data");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <Grid container justifyContent="center">

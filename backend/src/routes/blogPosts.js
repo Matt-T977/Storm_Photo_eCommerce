@@ -1,7 +1,7 @@
 import express from 'express';
 import blogController from '../controllers/blogController';
 
-const router = express.router();
+const router = express.Router();
 
 router.get('/list/:userId', blogController.getAllBlogPosts);
 
