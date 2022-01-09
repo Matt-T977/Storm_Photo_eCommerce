@@ -1,17 +1,11 @@
 import React, { useState } from "react";
-import {
-  Grid,
-  TextField,
-  Box,
-  FormControl,
-  Button,
-  ButtonGroup,
-} from "@mui/material";
+import { Grid, TextField, Box, Button, ButtonGroup } from "@mui/material";
 
 export default function EditProfile() {
   const [userProfile, setUserProfile] = useState({
     firstName: "",
     lastName: "",
+    email: "",
     phoneNumber: "",
     streetAddress: "",
     city: "",
@@ -32,7 +26,6 @@ export default function EditProfile() {
   };
   return (
     <Grid container md={10} xs={12} marginX="auto">
-      {/* <Grid container item md={10} xs={12} margin={3} justifyContent="center"> */}
       <Box
         item
         component="form"
@@ -80,6 +73,44 @@ export default function EditProfile() {
           <TextField
             required
             id="outlined-required"
+            name="email"
+            label="Email"
+            type="text"
+            color="primary"
+            value={userProfile.email}
+            onChange={handleChange}
+            placeholder="jane.smith@something.com"
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "64vw" },
+          }}
+          textAlign="center"
+        >
+          <TextField
+            required
+            id="outlined-required"
+            name="phoneNumber"
+            label="Phone Number"
+            type="text"
+            color="secondary"
+            value={userProfile.phoneNumber}
+            onChange={handleChange}
+            placeholder="(555) 555-5555"
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "64vw" },
+          }}
+          textAlign="center"
+        >
+          <TextField
+            required
+            id="outlined-required"
             name="streetAddress"
             label="Address"
             type="text"
@@ -92,7 +123,7 @@ export default function EditProfile() {
         <Grid
           item
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "30vw" },
+            "& .MuiTextField-root": { m: 1, width: "64vw" },
           }}
           textAlign="center"
         >
@@ -102,11 +133,19 @@ export default function EditProfile() {
             name="city"
             label="City"
             type="text"
-            color="primary"
+            color="secondary"
             value={userProfile.city}
             onChange={handleChange}
             placeholder="Moore"
           />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "30vw" },
+          }}
+          textAlign="center"
+        >
           <TextField
             required
             id="outlined-required"
@@ -117,6 +156,17 @@ export default function EditProfile() {
             value={userProfile.state}
             onChange={handleChange}
             placeholder="OK"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            name="zipCode"
+            label="Zipcode"
+            type="text"
+            color="primary"
+            value={userProfile.zipCode}
+            onChange={handleChange}
+            placeholder="12345"
           />
         </Grid>
         <Grid item textAlign="center">
@@ -130,7 +180,6 @@ export default function EditProfile() {
           </ButtonGroup>
         </Grid>
       </Box>
-      {/* </Grid> */}
     </Grid>
   );
 }
