@@ -1,4 +1,5 @@
 import React from "react";
+import { getStorage, ref } from "firebase/storage";
 import Navbar from "./Navbar";
 import { Grid } from "@mui/material";
 import "../styles/App.css";
@@ -17,6 +18,9 @@ import axios from "axios";
 // TODO: Auth
 // TODO: Account Creation
 // TODO: Log In
+
+const storage = getStorage();
+const demoImageRef = ref(storage, "storm_DemoONLY");
 
 function App() {
   return (
