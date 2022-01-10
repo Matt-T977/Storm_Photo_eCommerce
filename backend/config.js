@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import assert from 'assert';
-import { applicationDefault } from 'firebase-admin/app'
 
 dotenv.config();
 
@@ -32,6 +31,5 @@ export default {
     messagingSenderId: MESSAGING_SENDER_ID,
     appId: APP_ID,
     measurementId: MEASUREMENT_ID,
-    credential: applicationDefault(),
   },
 };

@@ -1,13 +1,14 @@
 // import { initializeApp } from 'firebase-admin/app';
+// eslint-disable-next-line import/no-unresolved
 import { getFirestore } from 'firebase-admin/firestore';
 import admin from 'firebase-admin';
 import config from '../config';
 import serviceAccount from '../serviceAccountKey.json';
 
 // Firebase Initialize
-// const firebaseApp = initializeApp(config.firebaseConfig);
-const firebaseApp = admin.initializeApp({
+admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
+  config: config.firebaseConfig,
 });
 const db = getFirestore();
 
