@@ -1,13 +1,13 @@
 import React from "react";
-import { getStorage, ref } from "firebase/storage";
-import Navbar from "./Navbar";
+import { Route, Routes } from "react-router";
+import axios from "axios";
+import firebase from "../firebase";
 import { Grid } from "@mui/material";
 import "../styles/App.css";
-import { Route, Routes } from "react-router";
+import Navbar from "./Navbar";
 import Landing from "./Landing";
 import PhotoList from "./PhotoList";
 import Profile from "./Profile";
-import axios from "axios";
 // TODO: Add Router *Check*
 // TODO: Landing Page *Started*
 // TODO: Product Page
@@ -19,9 +19,6 @@ import axios from "axios";
 // TODO: Account Creation
 // TODO: Log In
 
-const storage = getStorage();
-const demoImageRef = ref(storage, "storm_DemoONLY");
-
 function App() {
   return (
     <Grid container>
@@ -31,7 +28,10 @@ function App() {
       <Grid item xs={12}>
         <Routes>
           <Route path="/" exact element={<Landing />} />
-          <Route path="/photos" elemeent={<PhotoList />} />
+          <Route
+            path="/photos"
+            elemeent={<PhotoList storage={firebase.storage} />}
+          />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </Grid>

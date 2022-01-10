@@ -1,7 +1,14 @@
 import { initializeApp } from "firebase/app";
 //import { getAnalytics } from "firebase/analytics";
-import firebaseConfig from "../config";
+import firebaseConfig from "./config";
+import { getStorage, ref } from "firebase/storage";
 
-const app = initializeApp(firebaseConfig);
+const APP = initializeApp(firebaseConfig);
+const STORAGE = getStorage();
 
-export default app;
+const firebase = {
+  app: APP,
+  storage: STORAGE,
+};
+
+export default firebase;

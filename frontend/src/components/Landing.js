@@ -16,7 +16,7 @@ export default function Landing() {
       {/* <Grid xs={12} align='center' marginBottom={3} >
                 <img src={LandingImage} alt='Storm Header'/>
             </Grid> */}
-      <Grid md={10} xs={12} margin={1}>
+      <Grid item md={10} xs={12} margin={1}>
         <Card elevation={3}>
           <CardMedia
             component="img"
@@ -40,7 +40,7 @@ export default function Landing() {
           </CardContent>
         </Card>
       </Grid>
-      <Grid md={10} xs={12} margin={1}>
+      <Grid item md={10} xs={12} margin={1}>
         <Paper elevation={3}>
           <Typography variant="h4" component="h2" padding={3}>
             Blog Section
