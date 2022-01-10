@@ -6,7 +6,7 @@ export default function PhotoList(props) {
   const productImages = ref(props.storage, "Storm_DemoONLY");
 
   return (
-    <Grid>
+    <Grid container>
       <Typography>This is the photo list.</Typography>
     </Grid>
   );
