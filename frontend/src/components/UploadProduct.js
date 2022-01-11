@@ -16,11 +16,18 @@ export default function UploadProduct() {
   const handleUpload = (event) => {
     event.persist();
     let selected = event.target.files[0];
-    if (selected) {
-      setImageFile(selected);
-    } else {
-      setImageFile(null);
-    }
+    selected ? setImageFile(selected) : setImageFile(null);
+  };
+  const handleChange = (event) => {
+    event.persist();
+    setProductDetails((prevstate) => ({
+      ...prevstate,
+      [event.target.name]: event.target.value,
+    }));
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log({ productDetails, imageFile });
   };
   return (
     <Grid container>

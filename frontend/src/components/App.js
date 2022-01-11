@@ -30,7 +30,7 @@ function App() {
           <Route path="/" exact element={<Landing />} />
           <Route
             path="/photos"
-            elemeent={<PhotoList storage={firebase.storage} />}
+            element={<PhotoList storage={firebase.storage} />}
           />
           <Route path="/profile" element={<Profile />} />
         </Routes>

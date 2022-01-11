@@ -1,13 +1,17 @@
-import { Card, CardMedia, Grid, Typography } from "@mui/material";
-import { ref } from "firebase/storage";
 import React, { useState, useEffect } from "react";
+import { Card, CardMedia, Grid, Typography, Paper } from "@mui/material";
+import { ref } from "firebase/storage";
 
 export default function PhotoList(props) {
-  const productImages = ref(props.storage, "Storm_DemoONLY");
-
   return (
-    <Grid container>
-      <Typography>This is the photo list.</Typography>
+    <Grid container justifyContent="center">
+      <Grid item md={10} xs={12}>
+        <Paper>
+          <Typography variant="h4" component="h2">
+            This is the photo list.
+          </Typography>
+        </Paper>
+      </Grid>
     </Grid>
   );
 }

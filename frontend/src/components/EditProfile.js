@@ -38,7 +38,7 @@ export default function EditProfile() {
   };
   return (
     <Grid container justifyContent="center">
-      <Grid md={6} xs={12}>
+      <Grid item md={6} xs={12}>
         <Box
           item
           component="form"
