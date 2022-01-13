@@ -8,15 +8,19 @@ import {
   IconButton,
   CardContent,
 } from "@mui/material";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { ref } from "firebase/storage";
 import UploadProduct from "./UploadProduct";
 
 export default function PhotoList(props) {
+  const addProduct = () => {
+    <UploadProduct />;
+  };
   return (
     <Grid container justifyContent="center">
       <Grid item md={10} xs={12}>
-        <IconButton>
-          <UploadProduct />
+        <IconButton onClick={addProduct}>
+          <AddCircleOutlineIcon color="secondary" />
         </IconButton>
         <Card>
           <CardContent>
