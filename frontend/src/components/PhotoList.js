@@ -18,9 +18,9 @@ export default function PhotoList(props) {
   };
   return (
     <Grid container justifyContent="center">
-      <Grid item md={10} xs={12}>
+      <Grid item md={10} xs={12} marginX="auto">
         <IconButton onClick={addProduct}>
-          <AddCircleOutlineIcon color="secondary" />
+          <AddCircleOutlineIcon color="secondary" fontSize="large" />
         </IconButton>
         <Card>
           <CardContent>
