@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 
 export default function UploadProduct() {
   const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [productDetails, setProductDetails] = useState({
     imageURI: "",
     name: "",
