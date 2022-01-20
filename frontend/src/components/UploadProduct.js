@@ -35,74 +35,77 @@ export default function UploadProduct() {
   };
   return (
     <div>
-      <IconButton onClick={addProduct}>
+      <IconButton onClick={handleOpen}>
         <AddCircleOutlineIcon color="secondary" fontSize="large" />
       </IconButton>
-      <Modal>
-        <Grid container>
-          <Box component="form">
-            <Grid item>
-              <TextField
-                required
-                id="outlined-required"
-                name="image"
-                label="Image File"
-                type="file"
-                value={imageFile}
-                onChange={handleUpload}
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                required
-                id="outlined-required"
-                name="type"
-                label="Type"
-                type="text"
-                color="primary"
-                value={productDetails.type}
-                onChange={handleChange}
-                placeholder="Photo"
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                id="outlined"
-                name="resolution"
-                label="Resolution"
-                type="text"
-                color="primary"
-                value={productDetails.resolution}
-                onChange={handleChange}
-                placeholder="1920x1080"
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                id="outlined"
-                name="description"
-                label="Description"
-                type="text"
-                color="primary"
-                value={productDetails.description}
-                onChange={handleChange}
-                placeholder="This is a description of the product."
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                id="outlined"
-                name="price"
-                label="Price"
-                type="text"
-                color="primary"
-                value={productDetails.price}
-                onChange={handleChange}
-                placeholder="19.99"
-              />
-            </Grid>
-          </Box>
-        </Grid>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box component="form">
+          <Grid item>
+            <TextField
+              required
+              id="outlined-required"
+              name="image"
+              label="Image File"
+              type="file"
+              value={imageFile}
+              onChange={handleUpload}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              required
+              id="outlined-required"
+              name="type"
+              label="Type"
+              type="text"
+              color="primary"
+              value={productDetails.type}
+              onChange={handleChange}
+              placeholder="Photo"
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="outlined"
+              name="resolution"
+              label="Resolution"
+              type="text"
+              color="primary"
+              value={productDetails.resolution}
+              onChange={handleChange}
+              placeholder="1920x1080"
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="outlined"
+              name="description"
+              label="Description"
+              type="text"
+              color="primary"
+              value={productDetails.description}
+              onChange={handleChange}
+              placeholder="This is a description of the product."
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="outlined"
+              name="price"
+              label="Price"
+              type="text"
+              color="primary"
+              value={productDetails.price}
+              onChange={handleChange}
+              placeholder="19.99"
+            />
+          </Grid>
+        </Box>
       </Modal>
     </div>
   );
