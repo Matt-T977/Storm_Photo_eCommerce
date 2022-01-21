@@ -1,4 +1,4 @@
-import { Grid, Modal, TextField, IconButton } from "@mui/material";
+import { Grid, Modal, TextField, IconButton, Typography } from "@mui/material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { Box } from "@mui/system";
 import React, { useState, useEffect } from "react";
@@ -59,6 +59,9 @@ export default function UploadProduct() {
       >
         <Box component="form" sx={style}>
           <Grid item>
+            <Typography variant="h5" textAlign="center">
+              Create New Product
+            </Typography>
             <TextField
               required
               id="outlined-required"
@@ -69,54 +72,68 @@ export default function UploadProduct() {
               onChange={handleUpload}
             />
           </Grid>
-          <Grid item>
-            <TextField
-              required
-              id="outlined-required"
-              name="type"
-              label="Type"
-              type="text"
-              color="primary"
-              value={productDetails.type}
-              onChange={handleChange}
-              placeholder="Photo"
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              id="outlined"
-              name="resolution"
-              label="Resolution"
-              type="text"
-              color="primary"
-              value={productDetails.resolution}
-              onChange={handleChange}
-              placeholder="1920x1080"
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              id="outlined"
-              name="description"
-              label="Description"
-              type="text"
-              color="primary"
-              value={productDetails.description}
-              onChange={handleChange}
-              placeholder="This is a description of the product."
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              id="outlined"
-              name="price"
-              label="Price"
-              type="text"
-              color="primary"
-              value={productDetails.price}
-              onChange={handleChange}
-              placeholder="19.99"
-            />
+          <Grid
+            item
+            sx={{
+              "& .MuiTextField-root": { m: 2, width: "90%" },
+            }}
+            textAlign="center"
+          >
+            <Grid
+              item
+              sx={{
+                "& .MuiTextField-root": { m: 1, width: "90%" },
+              }}
+              textAlign="center"
+            >
+              <TextField
+                required
+                id="outlined-required"
+                name="type"
+                label="Type"
+                type="text"
+                color="primary"
+                value={productDetails.type}
+                onChange={handleChange}
+                placeholder="Photo"
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                id="outlined"
+                name="resolution"
+                label="Resolution"
+                type="text"
+                color="primary"
+                value={productDetails.resolution}
+                onChange={handleChange}
+                placeholder="1920x1080"
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                id="outlined"
+                name="description"
+                label="Description"
+                type="text"
+                color="primary"
+                value={productDetails.description}
+                onChange={handleChange}
+                placeholder="This is a description of the product."
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                id="outlined"
+                name="price"
+                label="Price"
+                type="text"
+                color="primary"
+                value={productDetails.price}
+                onChange={handleChange}
+                placeholder="19.99"
+              />
+            </Grid>
           </Grid>
         </Box>
       </Modal>
